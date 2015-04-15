@@ -10,6 +10,8 @@ gem 'rails', '4.2.1'
 gem 'devise', '~> 3.4.1'
 #Devise Bootstrap views with i18n support.
 gem 'devise-bootstrap-views', '~> 0.0.4'
+#Simple authorization for Rails applications
+gem 'pundit', '~> 0.3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

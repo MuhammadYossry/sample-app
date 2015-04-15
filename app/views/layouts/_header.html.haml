@@ -7,9 +7,12 @@
         %span.icon-bar
       = link_to 'SampleBlog', root_path, class: 'navbar-brand'
     #myNavbar.collapse.navbar-collapse
-      / %ul.nav.navbar-nav
-      /   %li.active
-      /     = link_to 'Home', root_path
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Home', root_path
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Posts', posts_path
       %ul.nav.navbar-nav.navbar-right
         - unless user_signed_in?
           %li

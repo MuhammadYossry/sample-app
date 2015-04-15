@@ -1,7 +1,11 @@
-Rails.application.routes.draw do
-  root 'blog#home'
+Rails.application.routes.draw do 
 
+  root 'blog#home'
   devise_for :users
+
+  resources :posts
+  resources :comments, only: [:create, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
