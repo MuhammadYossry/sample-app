@@ -1,7 +1,8 @@
 %p#notice= notice
 
 %p
-  %b= @post.title
+  %b= @post.title 
+  %i By #{link_to @post.user, display_all_path(@post.user)}
 %p
   %p= @post.body
 
