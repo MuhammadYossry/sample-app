@@ -1,6 +1,6 @@
 %h3 User all Posts
 - @user.posts.each do |post|
-  %p= link_to post, post
+  %p= link_to post, topic_slug_path(post)
 
 %h3 User all comments
 - @user.comments.each do |comment|

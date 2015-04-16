@@ -11,7 +11,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.includes(:user).find(params[:id])
+    if (params[:slug])
+      @post = Post.includes(:user).find_by( slug: params[:slug])
+    else
+      @post = Post.includes(:user).find(params[:id])
+    end
     @comments = @post.comments.includes(:user).paginate(page: params[:page], :per_page => 10)
   end
 
