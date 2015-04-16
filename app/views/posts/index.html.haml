@@ -4,15 +4,8 @@
 %table
 
   %tbody
-    - @posts.each do |post|
-      %tr
-        %td= post.title
-        %td= post.body
-        %td= link_to 'Show', post
-        - if policy(post).owner?
-          %td= link_to 'Edit', edit_post_path(post)
-          %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+    = render @posts
+      
 %br
 
 - if user_signed_in?

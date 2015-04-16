@@ -1,0 +1,6 @@
+%tr
+  %td= link_to post.title, post
+  %td By #{link_to post.user, display_all_path(post.user)}
+  - if policy(post).owner?
+    %td= link_to 'Edit', edit_post_path(post)
+    %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }

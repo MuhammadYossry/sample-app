@@ -16,11 +16,11 @@ class PostPolicy
   end
   
   def owner?
-      @current_user.id == @post.user_id
+      post_owner?
     end
   private
     def post_owner?
-      @current_user.id == @post.user_id
+      current_user && (@current_user.id == @post.user_id)
     end
 
 end

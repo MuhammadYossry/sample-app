@@ -1,0 +1,8 @@
+%h3 User all Posts
+- @user.posts.each do |post|
+  %p= link_to post, post
+
+%h3 User all comments
+- @user.comments.each do |comment|
+  %p 
+    #{comment.title} #{time_ago_in_words(comment.created_at)} 

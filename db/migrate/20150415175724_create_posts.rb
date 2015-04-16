@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.string :title,    null: false, default: ""
-      t.text :body,       null: false, default: ""
+      t.text   :body,     null: false, default: ""
       t.references :user, index: true
 
       t.timestamps null: false

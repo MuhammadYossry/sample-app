@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
   has_many :comments
+
+  def to_s
+    username
+  end
 end

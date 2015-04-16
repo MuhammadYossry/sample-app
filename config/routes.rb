@@ -1,11 +1,14 @@
 Rails.application.routes.draw do 
 
   root 'blog#home'
-  devise_for :users
+  devise_for :users 
+  devise_scope :user do
+    get '/users/:id/display-all' => "users#display_all", as: :display_all
+  end
 
-  resources :posts
-  resources :comments, only: [:create, :destroy]
-
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
