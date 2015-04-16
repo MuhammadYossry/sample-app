@@ -24,3 +24,13 @@ users.each do |user|
                        body:  body)
   end
 end
+
+recent_post = Post.first
+users = User.take(30)
+users.each do |user|
+  title = Faker::Lorem.word
+  body  = Faker::Hacker.say_something_smart
+  @comment = recent_post.comments.create!(title: title,
+                                          body:  body,
+                                          user: user)
+end

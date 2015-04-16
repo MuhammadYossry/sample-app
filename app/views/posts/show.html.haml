@@ -11,6 +11,8 @@
 
 %h2 Comments
 #comments
-  = render :partial => @post.comments
-= render 'comments/form'
+  = render :partial => @comments
+  = will_paginate @comments, renderer: BootstrapPagination::Rails
+-if user_signed_in?
+  = render 'comments/form'
 

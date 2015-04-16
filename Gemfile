@@ -12,6 +12,8 @@ gem 'devise', '~> 3.4.1'
 gem 'devise-bootstrap-views', '~> 0.0.4'
 #Simple authorization for Rails applications
 gem 'pundit', '~> 0.3.0'
+#Bootstrap pagination component with the will_paginate pagination gem
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

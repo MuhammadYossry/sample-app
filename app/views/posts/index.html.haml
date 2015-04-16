@@ -1,6 +1,11 @@
 = provide(:title, "Posts")
 %h1 Posts
 
+- if user_signed_in?
+  = link_to new_post_path do
+    %span.glyphicon.glyphicon-plus
+    Add Post
+    
 %table
 
   %tbody
@@ -8,7 +13,4 @@
       
 %br
 
-- if user_signed_in?
-  = link_to new_post_path do
-    %span.glyphicon.glyphicon-plus
-    Add Post
+= will_paginate @posts, renderer: BootstrapPagination::Rails 
